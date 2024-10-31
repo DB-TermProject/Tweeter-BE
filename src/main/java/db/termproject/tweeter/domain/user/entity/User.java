@@ -2,12 +2,15 @@ package db.termproject.tweeter.domain.user.entity;
 
 import db.termproject.tweeter.global.common.entity.BaseEntity;
 import lombok.*;
+import org.springframework.data.annotation.Id;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class User extends BaseEntity {
-    private String id;
+
+    @Id
+    private Long user_id;
 
     private String password;
 
@@ -15,17 +18,17 @@ public class User extends BaseEntity {
 
     private String info;
 
-    private String profileImageUrl;
+    private String profile_image_url;
 
     private String organization;
 
-    private Boolean isVerified;
+    private Boolean is_verified;
 
-    private Boolean isPublic;
+    private Boolean is_public;
 
-    private Long followersCount;
+    private Long followers_count;
 
-    private Long followingCount;
+    private Long following_count;
 
-    private Long postCount;
+    private Long post_count;
 }

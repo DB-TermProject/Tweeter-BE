@@ -1,16 +1,22 @@
-package db.termproject.tweeter.domain.alarm.entity;
+package db.termproject.tweeter.domain.notice.entity;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Alarm {
+public class Notice {
 
-    private String id;
+    @Id
+    private Long notice_id;
 
     private String content;
+
+    private Long user_id;
+
+    private Boolean is_checked;
 }

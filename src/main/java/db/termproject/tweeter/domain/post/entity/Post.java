@@ -5,21 +5,25 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class Post extends BaseEntity {
 
-    private String id;
+    @Id
+    private Long post_id;
 
     private String content;
 
-    private Long likeCount;
+    private Long like_count;
 
-    private Long commentCount;
+    private Long comment_count;
 
-    private Long retweetCount;
+    private Long retweet_count;
 
-    private Boolean isPinned;
+    private Boolean is_pinned;
+
+    private Long writer_id;
 }

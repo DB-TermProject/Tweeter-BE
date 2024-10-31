@@ -5,12 +5,17 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class Follow extends BaseEntity {
 
-    private String id;
+    @Id
+    private Long follow_id;
 
+    private Long follower_id;     // from
+
+    private Long following_id;    // to
 }
