@@ -1,6 +1,6 @@
-package db.termproject.tweeter.domain.post.entity;
+package db.termproject.tweeter.domain.comment.entity;
 
-import db.termproject.tweeter.global.common.entity.BaseEntity;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,22 +10,18 @@ import org.springframework.data.annotation.Id;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Post extends BaseEntity {
+public class Comment {
 
     @Id
-    private Long post_id;
+    private Long comment_id;
 
     private String content;
 
     private Long like_count;
 
-    private Long comment_count;
-
-    private Long retweet_count;
-
-    private Boolean is_pinned;
-
     private Long writer_id;
 
-    private String original_post_id;
+    private Long post_id;
+
+    private Long parent_comment_id;
 }
