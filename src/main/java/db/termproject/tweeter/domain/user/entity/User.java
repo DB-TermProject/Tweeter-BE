@@ -4,6 +4,7 @@ import db.termproject.tweeter.global.common.entity.BaseEntity;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 
+@Builder
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
