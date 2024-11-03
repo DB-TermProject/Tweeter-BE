@@ -11,7 +11,9 @@ import org.springframework.data.annotation.Id;
 public class User extends BaseEntity {
 
     @Id
-    private Long user_id;
+    private Long id;
+
+    private String email;   // Validation 필요
 
     private String password;
 

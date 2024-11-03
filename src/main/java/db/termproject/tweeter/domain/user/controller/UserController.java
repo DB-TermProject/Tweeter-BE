@@ -1,6 +1,7 @@
 package db.termproject.tweeter.domain.user.controller;
 
 import db.termproject.tweeter.domain.user.dto.UserReqDTO.Login;
+import db.termproject.tweeter.domain.user.dto.UserReqDTO.SignUp;
 import db.termproject.tweeter.domain.user.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -20,5 +21,11 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody @Valid Login dto) {
         return ResponseEntity.ok(userService.login(dto));
+    }
+
+    @PostMapping
+    public ResponseEntity<?> signUp(@RequestBody @Valid SignUp dto) {
+        userService.signUp(dto);
+        return ResponseEntity.ok().build();
     }
 }
