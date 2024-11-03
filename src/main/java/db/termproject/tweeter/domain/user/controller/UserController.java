@@ -1,15 +1,14 @@
 package db.termproject.tweeter.domain.user.controller;
 
 import db.termproject.tweeter.domain.user.dto.UserReqDTO.Login;
+import db.termproject.tweeter.domain.user.dto.UserReqDTO.Password;
+import db.termproject.tweeter.domain.user.dto.UserReqDTO.Profile;
 import db.termproject.tweeter.domain.user.dto.UserReqDTO.SignUp;
 import db.termproject.tweeter.domain.user.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -26,6 +25,17 @@ public class UserController {
     @PostMapping
     public ResponseEntity<?> signUp(@RequestBody @Valid SignUp dto) {
         userService.signUp(dto);
+        return ResponseEntity.ok().build();
+    }
+
+    @PatchMapping("/profile")
+    public ResponseEntity<?> updateProfile(@RequestParam Long id, @RequestBody @Valid Profile dto) {
+        return ResponseEntity.ok(userService.updateProfile(id, dto));
+    }
+
+    @PatchMapping("/auth")
+    public ResponseEntity<?> updatePassword(@RequestParam Long id, @RequestBody @Valid Password dto) {
+        userService.updatePassword(id, dto);
         return ResponseEntity.ok().build();
     }
 }
