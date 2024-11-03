@@ -13,7 +13,7 @@ public class User extends BaseEntity {
     @Id
     private Long id;
 
-    private String email;   // Validation 필요
+    private String email;
 
     private String password;
 
