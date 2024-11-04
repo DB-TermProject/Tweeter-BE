@@ -13,9 +13,8 @@ import org.springframework.data.annotation.Id;
 public class Follow extends BaseEntity {
 
     @Id
-    private Long follow_id;
-
     private Long follower_id;     // from
 
+    @Id
     private Long following_id;    // to
 }
