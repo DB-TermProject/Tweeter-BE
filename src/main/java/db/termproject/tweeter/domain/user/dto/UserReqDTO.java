@@ -26,7 +26,7 @@ public class UserReqDTO {
     ) {}
 
     public record Password(
-            @NotEmpty String newPassword,
+            @NotEmpty @Length(min = 5, max = 20) String newPassword,
             @NotEmpty String confirmPassword
     ) {}
 }
